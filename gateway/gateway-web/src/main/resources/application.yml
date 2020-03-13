@@ -1,21 +1,21 @@
 spring:
   rabbitmq:
-    host: ${RABBIT_MQ_HOST:localhost}
+    host: ${RABBIT_MQ_HOST:39.104.25.190}
     port: ${RABBIT_MQ_PORT:5672}
-    username: ${RABBIT_MQ_USERNAME:guest}
-    password: ${RABBIT_MQ_PASSWORD:guest}
+    username: ${RABBIT_MQ_USERNAME:admin}
+    password: ${RABBIT_MQ_PASSWORD:gwall}
   redis:
-    host: ${REDIS_HOST:localhost}
+    host: ${REDIS_HOST:39.104.25.190}
     port: ${REDIS_PORT:6379}
-    #password: ${REDIS_PASSWORD:}
+    password: ${REDIS_PASSWORD:gwall}
     lettuce:
       pool:
         max-active: 300
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:${DATASOURCE_DBTYPE:mysql}://${DATASOURCE_HOST:localhost}:${DATASOURCE_PORT:3306}/sc_gateway?characterEncoding=UTF-8&useUnicode=true&useSSL=false
+    url: jdbc:${DATASOURCE_DBTYPE:mysql}://${DATASOURCE_HOST:39.104.25.190}:${DATASOURCE_PORT:3306}/sc_gateway?characterEncoding=UTF-8&useUnicode=true&useSSL=false
     username: ${DATASOURCE_USERNAME:root}
-    password: ${DATASOURCE_PASSWORD:root123}
+    password: ${DATASOURCE_PASSWORD:gwall}
 
   zipkin:
     enabled: true
@@ -71,7 +71,7 @@ jetcache:
         minIdle: 5
         maxIdle: 20
         maxTotal: 50
-      host: ${REDIS_HOST:localhost}
+      host: ${REDIS_HOST:39.104.25.190}
       port: ${REDIS_PORT:6379}
 
 #网关白名单，无需要签权url
